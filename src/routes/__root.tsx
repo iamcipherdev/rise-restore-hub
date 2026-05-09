@@ -75,20 +75,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Rise and Restore — Together we Rise" },
+      { name: "description", content: "A youth-led NGO empowering women, advancing inclusive education, and championing transgender rights across Pakistan." },
+      { property: "og:title", content: "Rise and Restore — Together we Rise" },
+      { property: "og:description", content: "Empowering Women, Advancing Equality, Transforming Futures." },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
-      {
-        rel: "stylesheet",
-        href: appCss,
-      },
+      { rel: "stylesheet", href: appCss },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" },
     ],
   }),
   shellComponent: RootShell,
@@ -116,7 +114,14 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <Outlet />
+      <div className="min-h-screen flex flex-col">
+        <Header />
+        <main className="flex-1 pt-16 sm:pt-18">
+          <Outlet />
+        </main>
+        <Footer />
+        <WhatsAppButton />
+      </div>
     </QueryClientProvider>
   );
 }
