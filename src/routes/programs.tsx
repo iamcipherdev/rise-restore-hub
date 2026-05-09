@@ -114,7 +114,7 @@ function ProgramsPage() {
             className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-5"
           >
             {stories[tab].map((s) => (
-              <div key={s.name} className="p-7 rounded-3xl bg-card border border-border shadow-card relative">
+              <div key={s.name} className="p-7 rounded-3xl bg-card border border-border shadow-card relative transition-all duration-300 hover:-translate-y-1 hover:[box-shadow:0_18px_40px_-12px_rgba(106,13,173,0.4)]">
                 <Quote className="text-pink/30 absolute top-5 right-5" size={32} />
                 <p className="text-foreground/80 leading-relaxed">"{s.text}"</p>
                 <div className="mt-5 flex items-center gap-3">
