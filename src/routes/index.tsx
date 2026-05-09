@@ -37,8 +37,9 @@ function HomePage() {
       {/* HERO */}
       <section className="relative min-h-[92vh] flex items-center overflow-hidden bg-gradient-dark text-white">
         <div className="absolute inset-0">
-          <img src={heroImg} alt="" className="h-full w-full object-cover opacity-30" width={1536} height={1024} />
-          <div className="absolute inset-0 bg-gradient-to-br from-ink/90 via-ink/70 to-ink/50" />
+          <img src={heroImg} alt="" className="h-full w-full object-cover" width={1536} height={1024} />
+          <div className="absolute inset-0" style={{ background: "rgba(0,0,0,0.6)" }} />
+          <div className="absolute inset-0 bg-gradient-to-br from-ink/60 via-ink/40 to-transparent" />
           <div className="absolute -top-32 -left-32 h-96 w-96 rounded-full bg-purple/30 blur-3xl" />
           <div className="absolute -bottom-32 -right-32 h-96 w-96 rounded-full bg-pink/30 blur-3xl" />
         </div>
@@ -48,16 +49,35 @@ function HomePage() {
               <Globe2 size={14} /> Youth-led • Pakistan
             </span>
           </motion.div>
-          <motion.h1
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.1 }}
-            className="mt-6 text-5xl sm:text-6xl lg:text-8xl font-black leading-[0.95] max-w-5xl"
-          >
-            Empowering Women,<br />
-            Advancing <span className="text-gradient">Equality</span>,<br />
-            Transforming Futures.
-          </motion.h1>
+          <h1 className="mt-6 text-5xl sm:text-6xl lg:text-8xl font-black leading-[0.95] max-w-5xl">
+            {(() => {
+              const lines = [
+                ["Empowering", "Women,"],
+                ["Advancing", "Equality,"],
+                ["Transforming", "Futures."],
+              ];
+              let i = 0;
+              return lines.map((line, li) => (
+                <span key={li} className="block">
+                  {line.map((word) => {
+                    const delay = 0.15 + i++ * 0.1;
+                    const isAccent = word === "Equality,";
+                    return (
+                      <motion.span
+                        key={word + li}
+                        initial={{ opacity: 0, y: 24 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] }}
+                        className={`inline-block mr-[0.25em] ${isAccent ? "text-gradient" : ""}`}
+                      >
+                        {word}
+                      </motion.span>
+                    );
+                  })}
+                </span>
+              ));
+            })()}
+          </h1>
           <motion.p
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
