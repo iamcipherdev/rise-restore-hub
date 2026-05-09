@@ -1,6 +1,8 @@
 import { Link } from "@tanstack/react-router";
 import { Logo } from "./Logo";
-import { Facebook, Instagram, Linkedin, Twitter, Mail, Phone } from "lucide-react";
+import { Mail, Phone, Globe, Send, Camera, Users } from "lucide-react";
+
+const socialIcons = [Globe, Camera, Send, Users];
 
 export function Footer() {
   return (
