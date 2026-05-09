@@ -51,6 +51,17 @@ function ContactPage() {
       return;
     }
     setErrors({});
+
+    // Deliver every query to the official inbox via the user's email client
+    const subject = `[Rise and Restore] ${data.help} — ${data.name}`;
+    const body =
+      `Name: ${data.name}\n` +
+      `Email: ${data.email}\n` +
+      `How they want to help: ${data.help}\n\n` +
+      `Message:\n${data.message}`;
+    const mailto = `mailto:riseandrestore.org@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailto;
+
     setSubmitted(true);
   }
 
