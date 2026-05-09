@@ -100,28 +100,28 @@ function ContactPage() {
         </div>
       </section>
 
-      <section className="pb-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid lg:grid-cols-5 gap-8">
-          <div className="lg:col-span-2 space-y-5">
-            <h2 className="text-4xl font-black leading-tight">Let's talk.</h2>
-            <p className="text-muted-foreground">Reach out — we read every message.</p>
-            <a href="tel:+923215962003" className="flex items-center gap-4 p-5 rounded-2xl bg-card border border-border shadow-card hover:border-purple transition-colors">
-              <div className="h-12 w-12 rounded-xl bg-gradient-soft text-purple flex items-center justify-center"><Phone size={20} /></div>
-              <div>
-                <div className="text-xs text-muted-foreground font-semibold uppercase tracking-wider">Phone</div>
-                <div className="font-bold mt-0.5">+92 321 5962003</div>
+      <section className="pb-16 sm:pb-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid lg:grid-cols-5 gap-6 sm:gap-8">
+          <div className="lg:col-span-2 space-y-4 sm:space-y-5">
+            <h2 className="text-3xl sm:text-4xl font-black leading-tight">Let's talk.</h2>
+            <p className="text-muted-foreground text-sm sm:text-base">Reach out — we read every message.</p>
+            <a href="tel:+923215962003" className="flex items-center gap-3 sm:gap-4 p-4 sm:p-5 rounded-2xl bg-card border border-border shadow-card hover:border-purple transition-colors">
+              <div className="h-11 w-11 sm:h-12 sm:w-12 shrink-0 rounded-xl bg-gradient-soft text-purple flex items-center justify-center"><Phone size={20} /></div>
+              <div className="min-w-0">
+                <div className="text-[10px] sm:text-xs text-muted-foreground font-semibold uppercase tracking-wider">Phone</div>
+                <div className="font-bold mt-0.5 text-sm sm:text-base">+92 321 5962003</div>
               </div>
             </a>
-            <a href="mailto:riseandrestore.org@gmail.com" className="flex items-center gap-4 p-5 rounded-2xl bg-card border border-border shadow-card hover:border-purple transition-colors">
-              <div className="h-12 w-12 rounded-xl bg-gradient-soft text-purple flex items-center justify-center"><Mail size={20} /></div>
-              <div className="min-w-0">
-                <div className="text-xs text-muted-foreground font-semibold uppercase tracking-wider">Email</div>
-                <div className="font-bold mt-0.5 truncate">riseandrestore.org@gmail.com</div>
+            <a href="mailto:riseandrestore.org@gmail.com" className="flex items-center gap-3 sm:gap-4 p-4 sm:p-5 rounded-2xl bg-card border border-border shadow-card hover:border-purple transition-colors">
+              <div className="h-11 w-11 sm:h-12 sm:w-12 shrink-0 rounded-xl bg-gradient-soft text-purple flex items-center justify-center"><Mail size={20} /></div>
+              <div className="min-w-0 flex-1">
+                <div className="text-[10px] sm:text-xs text-muted-foreground font-semibold uppercase tracking-wider">Email</div>
+                <div className="font-bold mt-0.5 text-sm sm:text-base truncate break-all">riseandrestore.org@gmail.com</div>
               </div>
             </a>
           </div>
 
-          <div className="lg:col-span-3 p-8 sm:p-10 rounded-3xl bg-card border border-border shadow-elegant">
+          <div className="lg:col-span-3 p-5 sm:p-8 lg:p-10 rounded-3xl bg-card border border-border shadow-elegant">
             {submitted ? (
               <div className="text-center py-10">
                 <div className="mx-auto h-16 w-16 rounded-full bg-gradient-brand flex items-center justify-center text-white shadow-glow">
