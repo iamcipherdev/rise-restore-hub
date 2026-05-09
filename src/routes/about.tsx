@@ -110,7 +110,13 @@ function AboutPage() {
           </div>
           <div className="mt-12 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
             {partners.map((p) => (
-              <div key={p} className="aspect-[3/2] rounded-2xl border border-border bg-card p-5 flex items-center justify-center text-center text-sm font-semibold text-foreground/70 hover:border-purple hover:text-purple hover:shadow-card transition-all">
+              <div
+                key={p}
+                className="aspect-[3/2] rounded-2xl border-2 border-purple bg-card p-5 flex items-center justify-center text-center text-sm font-semibold text-foreground/80 hover:-translate-y-1 hover:text-purple transition-all duration-300"
+                style={{ transitionProperty: "transform, box-shadow, color" }}
+                onMouseEnter={(e) => (e.currentTarget.style.boxShadow = "0 12px 30px -8px rgba(106,13,173,0.45)")}
+                onMouseLeave={(e) => (e.currentTarget.style.boxShadow = "")}
+              >
                 {p}
               </div>
             ))}
