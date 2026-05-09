@@ -107,7 +107,7 @@ function HomePage() {
       {/* STATS */}
       <section className="relative -mt-12 z-10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="rounded-3xl bg-card shadow-elegant border border-border/60 p-6 sm:p-10 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
+          <div className="rounded-[4px] bg-card shadow-elegant border border-border/60 p-6 sm:p-10 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
             {stats.map((s) => (
               <div key={s.label} className="text-center">
                 <div className="text-3xl sm:text-4xl lg:text-5xl font-black text-gradient">
