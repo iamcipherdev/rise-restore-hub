@@ -15,7 +15,7 @@ export function Footer() {
             transgender rights across Pakistan.
           </p>
           <div className="flex gap-3 pt-2">
-            {[Facebook, Instagram, Twitter, Linkedin].map((Icon, i) => (
+            {socialIcons.map((Icon, i) => (
               <a key={i} href="#" aria-label="social" className="h-10 w-10 inline-flex items-center justify-center rounded-full bg-white/10 hover:bg-gradient-brand transition-all">
                 <Icon size={16} />
               </a>
