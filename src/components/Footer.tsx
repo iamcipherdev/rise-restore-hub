@@ -1,8 +1,13 @@
 import { Link } from "@tanstack/react-router";
 import { Logo } from "./Logo";
-import { Mail, Phone, Globe, Send, Camera, Users } from "lucide-react";
+import { Mail, Phone, Facebook, Instagram, Twitter, Linkedin } from "lucide-react";
 
-const socialIcons = [Globe, Camera, Send, Users];
+const socials = [
+  { Icon: Facebook, href: "#", label: "Facebook" },
+  { Icon: Instagram, href: "#", label: "Instagram" },
+  { Icon: Twitter, href: "#", label: "Twitter / X" },
+  { Icon: Linkedin, href: "#", label: "LinkedIn" },
+];
 
 export function Footer() {
   return (
@@ -15,8 +20,13 @@ export function Footer() {
             transgender rights across Pakistan.
           </p>
           <div className="flex gap-3 pt-2">
-            {socialIcons.map((Icon, i) => (
-              <a key={i} href="#" aria-label="social" className="h-10 w-10 inline-flex items-center justify-center rounded-full bg-white/10 hover:bg-gradient-brand transition-all">
+            {socials.map(({ Icon, href, label }) => (
+              <a
+                key={label}
+                href={href}
+                aria-label={label}
+                className="h-10 w-10 inline-flex items-center justify-center rounded-full bg-white/10 text-white hover:bg-gradient-brand hover:scale-110 transition-all duration-300"
+              >
                 <Icon size={16} />
               </a>
             ))}
