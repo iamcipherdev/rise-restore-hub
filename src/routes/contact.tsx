@@ -11,6 +11,10 @@ export const Route = createFileRoute("/contact")({
       { name: "description", content: "Become an ambassador, volunteer, partner with us, or support through funding. Reach Rise and Restore today." },
       { property: "og:title", content: "Get Involved — Rise and Restore" },
       { property: "og:description", content: "Four ways to join the movement. Together, we rise." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Get Involved — Rise and Restore" },
+      { name: "twitter:description", content: "Four ways to join the movement. Together, we rise." },
     ],
   }),
   component: ContactPage,
@@ -123,13 +127,31 @@ function ContactPage() {
 
           <div className="lg:col-span-3 p-5 sm:p-8 lg:p-10 rounded-3xl bg-card border border-border shadow-elegant">
             {submitted ? (
-              <div className="text-center py-10">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.96 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.35 }}
+                className="text-center py-10"
+                role="status"
+                aria-live="polite"
+              >
                 <div className="mx-auto h-16 w-16 rounded-full bg-gradient-brand flex items-center justify-center text-white shadow-glow">
                   <CheckCircle2 size={32} />
                 </div>
-                <h3 className="mt-5 text-2xl font-black">Thank you!</h3>
-                <p className="mt-2 text-muted-foreground">We've received your message and will get back to you soon.</p>
-              </div>
+                <h3 className="mt-5 text-2xl font-black">Message sent!</h3>
+                <p className="mt-2 text-muted-foreground max-w-md mx-auto">
+                  Your email client just opened with your message addressed to{" "}
+                  <span className="font-semibold text-foreground">riseandrestore.org@gmail.com</span>.
+                  Press <span className="font-semibold text-foreground">Send</span> there to deliver it — we read every message and will reply soon.
+                </p>
+                <button
+                  type="button"
+                  onClick={() => setSubmitted(false)}
+                  className="mt-6 inline-flex items-center justify-center px-6 py-3 rounded-full bg-gradient-brand text-white font-semibold shadow-glow hover:scale-[1.02] transition-transform"
+                >
+                  Send another message
+                </button>
+              </motion.div>
             ) : (
               <form onSubmit={onSubmit} className="space-y-5">
                 <Field label="Full name" name="name" error={errors.name} />

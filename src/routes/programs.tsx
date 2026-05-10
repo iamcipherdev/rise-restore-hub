@@ -13,6 +13,12 @@ export const Route = createFileRoute("/programs")({
       { name: "description", content: "Education, transgender inclusion and women empowerment programs — and the stories of lives transformed." },
       { property: "og:title", content: "Programs & Impact — Rise and Restore" },
       { property: "og:description", content: "Real programs, real stories of change across Pakistan." },
+      { property: "og:image", content: eduImg },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Programs & Impact — Rise and Restore" },
+      { name: "twitter:description", content: "Real programs, real stories of change across Pakistan." },
+      { name: "twitter:image", content: eduImg },
     ],
   }),
   component: ProgramsPage,
@@ -94,12 +100,18 @@ function ProgramsPage() {
             <h2 className="mt-3 text-4xl sm:text-5xl font-black">Lives transformed.</h2>
           </div>
 
-          <div className="mt-10 inline-flex p-1.5 rounded-full bg-card border border-border shadow-card">
+          <div
+            role="tablist"
+            aria-label="Impact story categories"
+            className="mt-8 sm:mt-10 grid grid-cols-3 sm:inline-flex gap-1.5 sm:gap-0 p-1.5 rounded-2xl sm:rounded-full bg-card border border-border shadow-card w-full sm:w-auto"
+          >
             {tabs.map((t) => (
               <button
                 key={t}
+                role="tab"
+                aria-selected={tab === t}
                 onClick={() => setTab(t)}
-                className={`px-5 sm:px-6 py-2.5 text-sm font-semibold rounded-full transition-all ${tab === t ? "bg-gradient-brand text-white shadow-glow" : "text-muted-foreground hover:text-foreground"}`}
+                className={`min-h-[44px] px-3 sm:px-6 py-2.5 text-sm font-semibold rounded-xl sm:rounded-full transition-all duration-300 active:scale-95 ${tab === t ? "bg-gradient-brand text-white shadow-glow" : "text-muted-foreground hover:text-foreground"}`}
               >
                 {t}
               </button>
@@ -110,8 +122,8 @@ function ProgramsPage() {
             key={tab}
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4 }}
-            className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-5"
+            transition={{ duration: 0.35, ease: "easeOut" }}
+            className="mt-8 sm:mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-5"
           >
             {stories[tab].map((s) => (
               <div key={s.name} className="p-7 rounded-3xl bg-card border border-border shadow-card relative transition-all duration-300 hover:-translate-y-1 hover:[box-shadow:0_18px_40px_-12px_rgba(106,13,173,0.4)]">
