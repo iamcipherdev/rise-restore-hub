@@ -201,7 +201,7 @@ function LeadershipPage() {
                   </div>
                   <h3 className="text-lg sm:text-xl font-black text-gradient leading-tight">{s.title}</h3>
                 </div>
-                <p className="mt-4 text-muted-foreground leading-relaxed text-sm sm:text-base">{s.body}</p>
+                <div className="mt-4 text-muted-foreground leading-relaxed text-sm sm:text-base">{s.body}</div>
               </motion.div>
             ))}
           </div>
