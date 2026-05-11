@@ -229,8 +229,28 @@ function LeadershipPage() {
                 </span>
               ))}
             </div>
+
+            <div className="mt-8 pt-6 border-t border-border">
+              <div className="flex items-center gap-3">
+                <div className="h-10 w-10 rounded-xl bg-gradient-soft flex items-center justify-center text-pink">
+                  <Sparkles size={18} />
+                </div>
+                <h4 className="text-base sm:text-lg font-black text-gradient leading-tight">Nominations</h4>
+              </div>
+              <div className="mt-4 flex flex-wrap gap-2">
+                {nominations.map((n) => (
+                  <span
+                    key={n}
+                    className="inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-semibold rounded-full border-2 border-purple text-purple bg-card"
+                  >
+                    <Sparkles size={12} /> {n}
+                  </span>
+                ))}
+              </div>
+            </div>
+
             <p className="mt-5 text-sm text-muted-foreground">
-              He also holds multiple international records recognizing his contributions.
+              In addition, Shahzaib holds multiple international records related to youth leadership, authorship, and social impact initiatives.
             </p>
           </motion.div>
         </div>
