@@ -37,6 +37,8 @@ import pUndp from "@/assets/p-undp.jpg";
 import pStateOfYouth from "@/assets/p-stateofyouth.jpg";
 import pChildcare from "@/assets/p-childcare.jpg";
 import pWomen from "@/assets/p-women.jpg";
+import pIlo from "@/assets/p-ilo.jpg";
+import pHrn from "@/assets/p-hrn.jpg";
 
 const partners: { name: string; logo?: string }[] = [
   { name: "Wajood Society", logo: pWajood },
@@ -47,8 +49,8 @@ const partners: { name: string; logo?: string }[] = [
   { name: "UNDP Pakistan", logo: pUndp },
   { name: "ChildCare Initiative", logo: pChildcare },
   { name: "Women Focus Advocacy Platform", logo: pWomen },
-  { name: "International Labour Organization" },
-  { name: "Human Rights Networks" },
+  { name: "International Labour Organization", logo: pIlo },
+  { name: "Human Rights Networks", logo: pHrn },
 ];
 
 function AboutPage() {

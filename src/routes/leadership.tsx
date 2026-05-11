@@ -1,6 +1,7 @@
+import type { ReactNode } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
-import { Award, Quote, Star, BookOpen, Globe, Users, GraduationCap, Compass } from "lucide-react";
+import { Award, Quote, Star, BookOpen, Globe, GraduationCap, Compass, Sparkles } from "lucide-react";
 
 const InstagramIcon = (p: { size?: number }) => (
   <svg width={p.size ?? 18} height={p.size ?? 18} viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zm0 9.34a3.54 3.54 0 1 0 0 7.08 3.54 3.54 0 0 0 0-7.08zm5.68-7.74a1.28 1.28 0 1 1-2.56 0 1.28 1.28 0 0 1 2.56 0z"/></svg>
@@ -31,40 +32,87 @@ export const Route = createFileRoute("/leadership")({
 });
 
 const awards = [
+  "Pride of Pakistan Award",
+  "Connected Pakistan 30 Under 30 Award 2026",
   "Global Youth Leadership Award",
   "Global Recognition Award",
-  "Connected Pakistan 30 Under 30 Award 2026",
-  "Pride of Pakistan Award",
   "Commonwealth Essay Competition Gold Honor",
-  "SEAMO International Gold Medal",
-  "MYCP Youth Excellence Award",
+  "SEAMO International Gold Medalist",
+  "MYCP Youth Excellence Award 2025",
+  "APSMA Awardee",
+  "SIMAP 2026 National Technology and Innovation Summit Awardee",
 ];
 
-const sections = [
+const nominations = [
+  "Global Student Prize",
+  "International Children's Peace Prize",
+  "Ashoka Young Changemakers Award",
+  "Gloria Barron Prize for Young Heroes",
+];
+
+const sections: { icon: typeof BookOpen; title: string; body: ReactNode }[] = [
   {
     icon: BookOpen,
-    title: "Authorship and Intellectual Contributions",
-    body: "Shahzaib is the author of impactful research-based and philosophical works, including Voices Without Permission and Dialectic of Dissent. His writings explore critical themes such as freedom of expression, dissent, education reform, and gender equality.",
-  },
-  {
-    icon: Globe,
-    title: "International Recognition",
-    body: "He has been recognized by Stanford University, MIT and Dartmouth College. Featured as one of the youngest contributors in an academic journal at Stanford University.",
-  },
-  {
-    icon: Users,
-    title: "Global Leadership",
-    body: "Shahzaib serves as a Youth Ambassador linked with United Nations related initiatives and SDGs Ambassador for Pakistan. Engaged with TheirWorld and international youth leadership networks.",
+    title: "Authorship and Intellectual Work",
+    body: (
+      <>
+        <p>
+          Shahzaib is the author of several research-based and philosophical works that explore themes of dissent, freedom, education, international relations, and social justice. His books include:
+        </p>
+        <ul className="mt-3 space-y-1.5 list-disc pl-5">
+          <li><span className="font-semibold text-foreground">Voices Without Permission</span> — focused on women's empowerment, human rights, and freedom of expression.</li>
+          <li><span className="font-semibold text-foreground">Dialectic of Dissent</span> — examining international relations, critical thought, and political philosophy.</li>
+        </ul>
+        <p className="mt-3">
+          In addition to books, he has written research papers, articles, theses, comics, and educational content in the humanities field. His writings aim to make complex social and political issues accessible to young people and wider audiences.
+        </p>
+      </>
+    ),
   },
   {
     icon: GraduationCap,
-    title: "Educational Vision",
-    body: "Shahzaib is leading an initiative to develop a national curriculum focused on critical thinking for students from Grade Five to Grade Ten.",
+    title: "Educational Reform and Vision",
+    body: (
+      <>
+        <p>
+          Driven by a belief that education is the foundation of social transformation, Shahzaib is currently leading the development of what aims to become one of the first comprehensive curricula in Pakistan focused on critical thinking and freedom studies for students from Grade 5 to Grade 10. The initiative includes textbooks, teacher guides, syllabus frameworks, and classroom implementation models aligned with both national and international educational standards.
+        </p>
+        <p className="mt-3">
+          His long-term mission is to reform education systems, encourage intellectual freedom, empower marginalized communities, and inspire young people to become leaders of meaningful social change.
+        </p>
+      </>
+    ),
+  },
+  {
+    icon: Globe,
+    title: "International Recognition and Leadership",
+    body: (
+      <>
+        <p>
+          Shahzaib's academic and leadership work has received recognition from globally respected institutions and international platforms. He has been selected, awarded scholarships, or recognized by institutions including Stanford University, MIT, Dartmouth College, Brown University, Columbia University, Yale University, Cornell University, and University of Pennsylvania.
+        </p>
+        <p className="mt-3">
+          He has received major international scholarships and academic recognitions, including full and partial scholarships for prestigious global programs in leadership, humanities, innovation, and research.
+        </p>
+        <p className="mt-3">
+          Shahzaib also serves in multiple international youth leadership and ambassadorial roles connected with global organizations, sustainable development initiatives, and youth engagement networks. He has represented Pakistan in international conferences, educational forums, and youth leadership initiatives.
+        </p>
+      </>
+    ),
   },
   {
     icon: Compass,
-    title: "Mission and Vision",
-    body: "His mission is to reform education systems, promote intellectual freedom, empower marginalized communities, and inspire youth to become leaders of positive change.",
+    title: "Mission",
+    body: (
+      <>
+        <p>
+          M. Shahzaib Asmat believes that young people are not future leaders alone, they are leaders of the present. His mission is to create a society built on education, equality, intellectual freedom, and dignity for all people regardless of gender, identity, or background.
+        </p>
+        <p className="mt-3">
+          Through writing, activism, educational reform, and global collaboration, he continues working to amplify unheard voices and inspire a new generation of change makers across Pakistan and the world.
+        </p>
+      </>
+    ),
   },
 ];
 
@@ -114,21 +162,16 @@ function LeadershipPage() {
               <h2 className="mt-4 text-3xl sm:text-4xl font-black leading-tight">M. Shahzaib Asmat</h2>
               <div className="mt-5 space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  M. Shahzaib Asmat is a remarkable young Pakistani author, researcher, and globally
-                  recognized youth leader whose work is redefining the role of young people in
-                  education reform, intellectual discourse, and human rights advocacy.
+                  M. Shahzaib Asmat is a Pakistani author, researcher, education reformist, and internationally recognized youth leader whose work is reshaping conversations around education, human rights, youth empowerment, and intellectual freedom.
                 </p>
                 <p>
-                  At an exceptionally young age, he has emerged as one of the most influential youth
-                  voices in Pakistan and internationally. He is widely recognized as Pakistan's
-                  youngest research-based book writer and among the youngest writers in the
-                  humanities field in recorded history.
+                  Recognized as Pakistan's youngest research-based book writer and among the world's youngest writers in the humanities field, Shahzaib has emerged as one of the most influential youth voices of his generation. His work combines academic research, activism, and social leadership to advocate for marginalized communities and educational transformation in Pakistan and beyond.
                 </p>
                 <p>
-                  As the Founder of Rise and Restore at the age of twelve, Shahzaib demonstrated
-                  extraordinary vision and leadership. Through this initiative, he has worked
-                  tirelessly to promote youth leadership, empower women, and provide education to
-                  underprivileged communities.
+                  At the age of twelve, he founded Rise and Restore, a social impact initiative dedicated to empowering women, supporting transgender communities, promoting youth leadership, and expanding access to education in underserved regions. Despite facing criticism, societal resistance, financial limitations, and lack of resources, Shahzaib continued working relentlessly, often day and night; to build opportunities for communities that are frequently unheard and overlooked.
+                </p>
+                <p>
+                  Through Rise and Restore, he has led educational campaigns, awareness sessions, protests, workshops, and advocacy initiatives across Pakistan focusing on gender equality, human rights, education, and social inclusion. The organization has supported women and transgender individuals through employment opportunities and educational initiatives, including support for transgender education programs in Gujranwala and the operation of a school providing free education to hundreds of children in rural communities.
                 </p>
               </div>
               <a
@@ -158,7 +201,7 @@ function LeadershipPage() {
                   </div>
                   <h3 className="text-lg sm:text-xl font-black text-gradient leading-tight">{s.title}</h3>
                 </div>
-                <p className="mt-4 text-muted-foreground leading-relaxed text-sm sm:text-base">{s.body}</p>
+                <div className="mt-4 text-muted-foreground leading-relaxed text-sm sm:text-base">{s.body}</div>
               </motion.div>
             ))}
           </div>
@@ -186,8 +229,28 @@ function LeadershipPage() {
                 </span>
               ))}
             </div>
+
+            <div className="mt-8 pt-6 border-t border-border">
+              <div className="flex items-center gap-3">
+                <div className="h-10 w-10 rounded-xl bg-gradient-soft flex items-center justify-center text-pink">
+                  <Sparkles size={18} />
+                </div>
+                <h4 className="text-base sm:text-lg font-black text-gradient leading-tight">Nominations</h4>
+              </div>
+              <div className="mt-4 flex flex-wrap gap-2">
+                {nominations.map((n) => (
+                  <span
+                    key={n}
+                    className="inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-semibold rounded-full border-2 border-purple text-purple bg-card"
+                  >
+                    <Sparkles size={12} /> {n}
+                  </span>
+                ))}
+              </div>
+            </div>
+
             <p className="mt-5 text-sm text-muted-foreground">
-              He also holds multiple international records recognizing his contributions.
+              In addition, Shahzaib holds multiple international records related to youth leadership, authorship, and social impact initiatives.
             </p>
           </motion.div>
         </div>
