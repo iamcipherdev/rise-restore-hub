@@ -162,21 +162,16 @@ function LeadershipPage() {
               <h2 className="mt-4 text-3xl sm:text-4xl font-black leading-tight">M. Shahzaib Asmat</h2>
               <div className="mt-5 space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  M. Shahzaib Asmat is a remarkable young Pakistani author, researcher, and globally
-                  recognized youth leader whose work is redefining the role of young people in
-                  education reform, intellectual discourse, and human rights advocacy.
+                  M. Shahzaib Asmat is a Pakistani author, researcher, education reformist, and internationally recognized youth leader whose work is reshaping conversations around education, human rights, youth empowerment, and intellectual freedom.
                 </p>
                 <p>
-                  At an exceptionally young age, he has emerged as one of the most influential youth
-                  voices in Pakistan and internationally. He is widely recognized as Pakistan's
-                  youngest research-based book writer and among the youngest writers in the
-                  humanities field in recorded history.
+                  Recognized as Pakistan's youngest research-based book writer and among the world's youngest writers in the humanities field, Shahzaib has emerged as one of the most influential youth voices of his generation. His work combines academic research, activism, and social leadership to advocate for marginalized communities and educational transformation in Pakistan and beyond.
                 </p>
                 <p>
-                  As the Founder of Rise and Restore at the age of twelve, Shahzaib demonstrated
-                  extraordinary vision and leadership. Through this initiative, he has worked
-                  tirelessly to promote youth leadership, empower women, and provide education to
-                  underprivileged communities.
+                  At the age of twelve, he founded Rise and Restore, a social impact initiative dedicated to empowering women, supporting transgender communities, promoting youth leadership, and expanding access to education in underserved regions. Despite facing criticism, societal resistance, financial limitations, and lack of resources, Shahzaib continued working relentlessly, often day and night; to build opportunities for communities that are frequently unheard and overlooked.
+                </p>
+                <p>
+                  Through Rise and Restore, he has led educational campaigns, awareness sessions, protests, workshops, and advocacy initiatives across Pakistan focusing on gender equality, human rights, education, and social inclusion. The organization has supported women and transgender individuals through employment opportunities and educational initiatives, including support for transgender education programs in Gujranwala and the operation of a school providing free education to hundreds of children in rural communities.
                 </p>
               </div>
               <a
