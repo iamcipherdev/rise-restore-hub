@@ -32,14 +32,21 @@ const impacts = [
 import pWajood from "@/assets/p-wajood.jpg";
 import pMycp from "@/assets/p-mycp.jpg";
 import pIoy from "@/assets/p-ioy.jpg";
+import pCcc from "@/assets/p-ccc.jpg";
+import pUndp from "@/assets/p-undp.jpg";
+import pStateOfYouth from "@/assets/p-stateofyouth.jpg";
+import pChildcare from "@/assets/p-childcare.jpg";
+import pWomen from "@/assets/p-women.jpg";
 
 const partners: { name: string; logo?: string }[] = [
   { name: "Wajood Society", logo: pWajood },
   { name: "MYCP", logo: pMycp },
   { name: "International Organization of Youth", logo: pIoy },
-  { name: "State of Youth" },
-  { name: "Community Care Collective" },
-  { name: "UNDP Pakistan" },
+  { name: "State of Youth", logo: pStateOfYouth },
+  { name: "Community Care Collective", logo: pCcc },
+  { name: "UNDP Pakistan", logo: pUndp },
+  { name: "ChildCare Initiative", logo: pChildcare },
+  { name: "Women Focus Advocacy Platform", logo: pWomen },
   { name: "International Labour Organization" },
   { name: "Human Rights Networks" },
 ];
