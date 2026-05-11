@@ -31,40 +31,87 @@ export const Route = createFileRoute("/leadership")({
 });
 
 const awards = [
+  "Pride of Pakistan Award",
+  "Connected Pakistan 30 Under 30 Award 2026",
   "Global Youth Leadership Award",
   "Global Recognition Award",
-  "Connected Pakistan 30 Under 30 Award 2026",
-  "Pride of Pakistan Award",
   "Commonwealth Essay Competition Gold Honor",
-  "SEAMO International Gold Medal",
-  "MYCP Youth Excellence Award",
+  "SEAMO International Gold Medalist",
+  "MYCP Youth Excellence Award 2025",
+  "APSMA Awardee",
+  "SIMAP 2026 National Technology and Innovation Summit Awardee",
 ];
 
-const sections = [
+const nominations = [
+  "Global Student Prize",
+  "International Children's Peace Prize",
+  "Ashoka Young Changemakers Award",
+  "Gloria Barron Prize for Young Heroes",
+];
+
+const sections: { icon: typeof BookOpen; title: string; body: React.ReactNode }[] = [
   {
     icon: BookOpen,
-    title: "Authorship and Intellectual Contributions",
-    body: "Shahzaib is the author of impactful research-based and philosophical works, including Voices Without Permission and Dialectic of Dissent. His writings explore critical themes such as freedom of expression, dissent, education reform, and gender equality.",
-  },
-  {
-    icon: Globe,
-    title: "International Recognition",
-    body: "He has been recognized by Stanford University, MIT and Dartmouth College. Featured as one of the youngest contributors in an academic journal at Stanford University.",
-  },
-  {
-    icon: Users,
-    title: "Global Leadership",
-    body: "Shahzaib serves as a Youth Ambassador linked with United Nations related initiatives and SDGs Ambassador for Pakistan. Engaged with TheirWorld and international youth leadership networks.",
+    title: "Authorship and Intellectual Work",
+    body: (
+      <>
+        <p>
+          Shahzaib is the author of several research-based and philosophical works that explore themes of dissent, freedom, education, international relations, and social justice. His books include:
+        </p>
+        <ul className="mt-3 space-y-1.5 list-disc pl-5">
+          <li><span className="font-semibold text-foreground">Voices Without Permission</span> — focused on women's empowerment, human rights, and freedom of expression.</li>
+          <li><span className="font-semibold text-foreground">Dialectic of Dissent</span> — examining international relations, critical thought, and political philosophy.</li>
+        </ul>
+        <p className="mt-3">
+          In addition to books, he has written research papers, articles, theses, comics, and educational content in the humanities field. His writings aim to make complex social and political issues accessible to young people and wider audiences.
+        </p>
+      </>
+    ),
   },
   {
     icon: GraduationCap,
-    title: "Educational Vision",
-    body: "Shahzaib is leading an initiative to develop a national curriculum focused on critical thinking for students from Grade Five to Grade Ten.",
+    title: "Educational Reform and Vision",
+    body: (
+      <>
+        <p>
+          Driven by a belief that education is the foundation of social transformation, Shahzaib is currently leading the development of what aims to become one of the first comprehensive curricula in Pakistan focused on critical thinking and freedom studies for students from Grade 5 to Grade 10. The initiative includes textbooks, teacher guides, syllabus frameworks, and classroom implementation models aligned with both national and international educational standards.
+        </p>
+        <p className="mt-3">
+          His long-term mission is to reform education systems, encourage intellectual freedom, empower marginalized communities, and inspire young people to become leaders of meaningful social change.
+        </p>
+      </>
+    ),
+  },
+  {
+    icon: Globe,
+    title: "International Recognition and Leadership",
+    body: (
+      <>
+        <p>
+          Shahzaib's academic and leadership work has received recognition from globally respected institutions and international platforms. He has been selected, awarded scholarships, or recognized by institutions including Stanford University, MIT, Dartmouth College, Brown University, Columbia University, Yale University, Cornell University, and University of Pennsylvania.
+        </p>
+        <p className="mt-3">
+          He has received major international scholarships and academic recognitions, including full and partial scholarships for prestigious global programs in leadership, humanities, innovation, and research.
+        </p>
+        <p className="mt-3">
+          Shahzaib also serves in multiple international youth leadership and ambassadorial roles connected with global organizations, sustainable development initiatives, and youth engagement networks. He has represented Pakistan in international conferences, educational forums, and youth leadership initiatives.
+        </p>
+      </>
+    ),
   },
   {
     icon: Compass,
-    title: "Mission and Vision",
-    body: "His mission is to reform education systems, promote intellectual freedom, empower marginalized communities, and inspire youth to become leaders of positive change.",
+    title: "Mission",
+    body: (
+      <>
+        <p>
+          M. Shahzaib Asmat believes that young people are not future leaders alone, they are leaders of the present. His mission is to create a society built on education, equality, intellectual freedom, and dignity for all people regardless of gender, identity, or background.
+        </p>
+        <p className="mt-3">
+          Through writing, activism, educational reform, and global collaboration, he continues working to amplify unheard voices and inspire a new generation of change makers across Pakistan and the world.
+        </p>
+      </>
+    ),
   },
 ];
 
