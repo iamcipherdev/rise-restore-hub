@@ -29,9 +29,19 @@ const impacts = [
   { icon: Megaphone, title: "Awareness in Schools", desc: "Sessions delivered across Pakistan to spark change." },
 ];
 
-const partners = [
-  "State of Youth", "Community Care Collective", "Wajood Society", "UNDP Pakistan",
-  "MYCP", "International Labour Organization", "Women-focused Advocacy Platforms", "Human Rights Networks",
+import pWajood from "@/assets/p-wajood.jpg";
+import pMycp from "@/assets/p-mycp.jpg";
+import pIoy from "@/assets/p-ioy.jpg";
+
+const partners: { name: string; logo?: string }[] = [
+  { name: "Wajood Society", logo: pWajood },
+  { name: "MYCP", logo: pMycp },
+  { name: "International Organization of Youth", logo: pIoy },
+  { name: "State of Youth" },
+  { name: "Community Care Collective" },
+  { name: "UNDP Pakistan" },
+  { name: "International Labour Organization" },
+  { name: "Human Rights Networks" },
 ];
 
 function AboutPage() {
@@ -117,13 +127,22 @@ function AboutPage() {
           <div className="mt-12 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
             {partners.map((p) => (
               <div
-                key={p}
-                className="aspect-[3/2] rounded-2xl border-2 border-purple bg-card p-5 flex items-center justify-center text-center text-sm font-semibold text-foreground/80 hover:-translate-y-1 hover:text-purple transition-all duration-300"
+                key={p.name}
+                className="rounded-2xl border-2 border-purple bg-card p-5 flex flex-col items-center justify-center gap-3 text-center hover:-translate-y-1 hover:text-purple transition-all duration-300"
                 style={{ transitionProperty: "transform, box-shadow, color" }}
                 onMouseEnter={(e) => (e.currentTarget.style.boxShadow = "0 12px 30px -8px rgba(106,13,173,0.45)")}
                 onMouseLeave={(e) => (e.currentTarget.style.boxShadow = "")}
               >
-                {p}
+                <div className="h-20 w-full flex items-center justify-center">
+                  {p.logo ? (
+                    <img src={p.logo} alt={p.name} loading="lazy" className="max-h-20 max-w-full object-contain" />
+                  ) : (
+                    <div className="h-16 w-16 rounded-full bg-gradient-soft flex items-center justify-center text-purple font-black text-xl">
+                      {p.name.split(" ").map((w) => w[0]).slice(0, 2).join("")}
+                    </div>
+                  )}
+                </div>
+                <div className="text-sm font-semibold text-foreground/80">{p.name}</div>
               </div>
             ))}
           </div>

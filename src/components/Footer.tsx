@@ -17,7 +17,7 @@ const LinkedInIcon = (p: { size?: number }) => (
 
 const socials = [
   { Icon: FacebookIcon, href: "#", label: "Facebook" },
-  { Icon: InstagramIcon, href: "#", label: "Instagram" },
+  { Icon: InstagramIcon, href: "https://instagram.com/riseandrestore.io", label: "Instagram" },
   { Icon: XIcon, href: "#", label: "Twitter / X" },
   { Icon: LinkedInIcon, href: "#", label: "LinkedIn" },
 ];
@@ -37,6 +37,8 @@ export function Footer() {
               <a
                 key={label}
                 href={href}
+                target={href.startsWith("http") ? "_blank" : undefined}
+                rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
                 aria-label={label}
                 className="h-10 w-10 inline-flex items-center justify-center rounded-full bg-white/10 text-white hover:bg-gradient-brand hover:scale-110 transition-all duration-300"
               >
