@@ -50,7 +50,7 @@ const nominations = [
   "Gloria Barron Prize for Young Heroes",
 ];
 
-const sections: { icon: typeof BookOpen; title: string; body: React.ReactNode }[] = [
+const sections: { icon: typeof BookOpen; title: string; body: ReactNode }[] = [
   {
     icon: BookOpen,
     title: "Authorship and Intellectual Work",
