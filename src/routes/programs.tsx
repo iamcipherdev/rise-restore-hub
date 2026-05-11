@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { GraduationCap, Heart, Sparkles, Quote } from "lucide-react";
 import eduImg from "@/assets/education.jpg";
@@ -118,29 +118,32 @@ function ProgramsPage() {
             ))}
           </div>
 
-          <motion.div
-            key={tab}
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.35, ease: "easeOut" }}
-            className="mt-8 sm:mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-5"
-          >
-            {stories[tab].map((s) => (
-              <div key={s.name} className="p-7 rounded-3xl bg-card border border-border shadow-card relative transition-all duration-300 hover:-translate-y-1 hover:[box-shadow:0_18px_40px_-12px_rgba(106,13,173,0.4)]">
-                <Quote className="text-pink/30 absolute top-5 right-5" size={32} />
-                <p className="text-foreground/80 leading-relaxed">"{s.text}"</p>
-                <div className="mt-5 flex items-center gap-3">
-                  <div className="h-10 w-10 rounded-full bg-gradient-brand flex items-center justify-center text-white font-bold">
-                    {s.name[0]}
-                  </div>
-                  <div>
-                    <div className="font-bold text-sm">{s.name}</div>
-                    <div className="text-xs text-muted-foreground">{tab} Program</div>
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={tab}
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -8 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
+              className="mt-8 sm:mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-5"
+            >
+              {stories[tab].map((s) => (
+                <div key={s.name} className="p-7 rounded-3xl bg-card border border-border shadow-card relative transition-all duration-300 hover:-translate-y-1 hover:[box-shadow:0_18px_40px_-12px_rgba(106,13,173,0.4)]">
+                  <Quote className="text-pink/30 absolute top-5 right-5" size={32} />
+                  <p className="text-foreground/80 leading-relaxed">"{s.text}"</p>
+                  <div className="mt-5 flex items-center gap-3">
+                    <div className="h-10 w-10 rounded-full bg-gradient-brand flex items-center justify-center text-white font-bold">
+                      {s.name[0]}
+                    </div>
+                    <div>
+                      <div className="font-bold text-sm">{s.name}</div>
+                      <div className="text-xs text-muted-foreground">{tab} Program</div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
-          </motion.div>
+              ))}
+            </motion.div>
+          </AnimatePresence>
         </div>
       </section>
     </>
