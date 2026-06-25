@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Domain Expired</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#1e293b,#0f172a);
+color:white;
+}
+
+.container{
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(12px);
+padding:40px;
+border-radius:20px;
+text-align:center;
+width:90%;
+max-width:600px;
+border:1px solid rgba(255,255,255,0.1);
+box-shadow:0 8px 30px rgba(0,0,0,0.4);
+}
+
+h1{
+font-size:40px;
+margin-bottom:15px;
+color:#ff6b6b;
+}
+
+p{
+font-size:18px;
+line-height:1.6;
+opacity:0.9;
+margin-bottom:25px;
+}
+
+.domain{
+font-size:22px;
+font-weight:bold;
+padding:12px;
+background:rgba(255,255,255,0.1);
+border-radius:10px;
+margin-bottom:20px;
+}
+
+button{
+padding:14px 28px;
+border:none;
+border-radius:10px;
+font-size:16px;
+cursor:pointer;
+background:#3b82f6;
+color:white;
+transition:.3s;
+}
+
+button:hover{
+transform:scale(1.05);
+background:#2563eb;
+}
+
+.footer{
+margin-top:20px;
+font-size:14px;
+opacity:0.6;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+    <h1>⚠ Domain Expired</h1>
+
+    <div class="domain">
+        yourdomain.com
+    </div>
+
+    <p>
+        The domain you are trying to access has expired or is no longer active.
+        Please renew the domain or contact the website owner for assistance.
+    </p>
+
+    <button onclick="window.location.href='mailto:support@yourdomain.com'">
+        Contact Support
+    </button>
+
+    <div class="footer">
+        © 2026 Domain Service Provider
+    </div>
+</div>
+
+</body>
+</html>
